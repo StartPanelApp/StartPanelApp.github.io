@@ -95,7 +95,8 @@ Nu kan användaren inte lämna appen utan PIN-kod.
 
 ## 3. Köra lokalt på en NAS (med en webserver som Apache eller liknande)
 
-För dig som vill undvika molntjänster och github beroende, så kan du köra sidan lokalt på en NAS (t.ex. Asustor, Synology, QNAP). Dock får man då använda sig av polling och får du inte live uppdatering utan det blir med vald fördröjning.
+För dig som vill undvika molntjänster och github beroende, så kan du köra sidan lokalt på en NAS (t.ex. Asustor, Synology, QNAP).  
+Dock får man då använda sig av polling och det blir alltså inte live uppdatering utan det blir med en vald tids-fördröjning.
 
 ⭐ Måste jag vara i samma nätverk som Homey?
 
