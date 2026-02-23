@@ -17,6 +17,7 @@ Detta är en webbaserad start-/dashboardsida gjord i **TypeScript** och med stor
 > **Obs:** Detta är *inte* en officiell Homey-app, utan något jag byggt för privat bruk egentligen.
 
 Det är en kombination av **startpage och dashboard** där du kan samla länkar och olika widgets.  
+Alla inställningar, widgets, favoritlänkar m.m. som du skapar sparas automatiskt i din webbläsares LocalStorage (inget ligger någon annanstans)
 
 För vanliga frågor FAQ, se längre ner på sidan.  
 
@@ -94,15 +95,12 @@ Nu kan användaren inte lämna appen utan PIN-kod.
 
 ## 3. Köra lokalt på en NAS (med en webserver som Apache eller liknande)
 
-Om du vill köra sidan på en NAS (t.ex. Asustor, Synology, QNAP) måste du använda de kompilerade HTML/JavaScript-filerna.
-
-De färdiga kompilerade filerna du behöver är:
-
+För dig som vill undvika molntjänster och github beroende, så kan du köra sidan lokalt på en NAS (t.ex. Asustor, Synology, QNAP). Dock får man då använda sig av polling och får du inte live uppdatering utan det blir med vald fördröjning.
 
 ⭐ Måste jag vara i samma nätverk som Homey?
 
-Nej - om du ansluter till Homey via molnet
-Ja – om du vill ansluta lokalt och använda polling. Undantag: Om du använder VPN funkar allt fullt ut var du än är, för det blir som att du kör lokalt.
+Ja – om du vill ansluta lokalt och använda polling. (Undantag: Om du använder VPN funkar allt fullt ut var du än är, för det blir som att du kör lokalt.)  
+Nej - om du ändå vill ansluta till Homey via molnet vilket också fungerar, fast du kör själva koden lokalt.
 
 ---
 
@@ -133,7 +131,7 @@ Strukturen i webbkatalogen ska alltså se ut så här:
 4. När filerna ligger på plats, öppna webbläsaren och gå till adressen för din NAS webbserver, till exempel:  
 http://din-nas-ip-adress/
 
-eller om du lade filerna i en undermapp:  
+eller om du lade filerna i en undermapp, t.ex. StartPanel:  
 http://din-nas-ip-adress/StartPanel/
 
 5. Sidan ska nu starta direkt från NAS:en. 
