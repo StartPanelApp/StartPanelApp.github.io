@@ -46,7 +46,7 @@ Det här är det absolut enklaste sättet att använda sidan.
 - Alternativt använder du bara **webhooks**, då behövs inga koder eller behörighet, men är väldigt begränsat. Fungerar med äldre Homey.
 
 **Läsa ut Homey ID-nr:**  
-Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud
+Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud  
 Kopiera koden och klistra in i appen Settings > Homey > "Homey ID".
 
 **Skapa API-kod:**  
