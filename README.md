@@ -87,6 +87,8 @@ För väggmonterad surfplatta rekommenderas skärmfästning i Android:
 Nu kan användaren inte lämna appen utan PIN-kod.
 (Förfarande ovan KAN skilja sig rejält mellan Android enheter, och vissa saknar denna funktion helt)
 
+## Se vanliga frågor FAQ längre ner för mer hjälp och tips
+
 ---
 
 ## Avancerat
