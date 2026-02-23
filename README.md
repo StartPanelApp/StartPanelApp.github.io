@@ -1,8 +1,8 @@
 <div align=center><img width="1200" alt="StartPanel Logo" src="StartPanelScreenshot.jpg" /></div>
 
-# StartPanel
+# StartPanelApp
 
-A lightweight personal start page written in **TypeScript**, built with **Vite**, and designed to be fast, clean, and fully customizable.  
+A lightweight personal start page written in **TypeScript**, built with **Vite**, and designed to be fully customizable.  
 Local preferences are stored directly in your browser, so no external database or backend is required.
 
 The rest of this documentation is written in **Swedish**.
@@ -10,10 +10,9 @@ The rest of this documentation is written in **Swedish**.
 ---
 
 
-# StartPanel – Webbaserad start- och dashboardsida
+# StartPanelApp – En Webbaserad start- och dashboardsida, med Homey integration
 
-Detta är en webbaserad start-/dashboardsida gjord i **TypeScript** med stor hjälp av Google AI Studio.  
-Och det är en **öppen källkod**.
+Detta är en webbaserad start-/dashboardsida gjord i **TypeScript** och med stor hjälp av Google AI Studio.  
 
 > **Obs:** Detta är *inte* en officiell Homey-app, utan något jag byggt för privat bruk egentligen.
 
@@ -23,7 +22,7 @@ För vanliga frågor FAQ, se längre ner på sidan.
 
 ## Integration med Homey Pro 2023
 
-För att använda den mot Homey Pro 2023, använder du antingen webhooks eller kör appen lokalt på din dator eller på en NAS.  
+För att använda den mot Homey Pro 2023, ansluter du via molnet, kör appen lokalt på en NAS eller använder bara webhooks.  
 Du kan se status och styra enheter direkt från sidan (beroende på hur du kör appen).
 
 ---
