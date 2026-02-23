@@ -56,10 +56,44 @@ Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud
 Inställningar > API-nycklar. Skapa Ny API Nyckel. ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler). 
 Kopiera koden och klistra in i appen Settings > Homey > "API Key / Bearer Token".
 
+---
+
+## 2. Installera som en App (PWA)
+
+Den här webbappen kan installeras som en vanlig app på din Android enhet med Chrome, en så kallad PWA App.
+Detta ger ett renare gränssnitt utan adressfält och fungerar perfekt i kiosk-läge.
+
+1. Öppna webbappen i Google Chrome
+2. Tryck på ⋮ (tre punkter uppe till höger)
+3. Välj "Lägg till på startskärmen" (eller installera App beroende på version)
+4. Bekräfta genom att trycka Installera
+
+Appen hamnar nu bland dina andra appar och kan startas som vilken annan app som helst.
+
+** Uppdateringar **
+
+Appen uppdateras automatiskt när nya versioner publiceras på GitHub.
+Ingen manuell ominstallation behövs.
+
+🔒 ** (Valfritt) Aktivera kiosk / låst läge på Android **
+
+Perfekt för en dedikerad kontrollpanel för Homey Pro 2023
+För väggmonterad surfplatta rekommenderas skärmfästning i Android:
+
+- Gå till Inställningar → Säkerhet
+- Aktivera Skärmfästning
+- Öppna appen
+- Tryck på Översiktsknappen (senaste appar)
+- Tryck på nålikonen för att fästa appen
+
+Nu kan användaren inte lämna appen utan PIN-kod.
+(Förfarande ovan KAN skilja sig rejält mellan Android enheter, och vissa saknar denna funktion helt)
 
 ---
 
-## 2. Köra lokalt på en NAS (med en webserver som Apache eller liknande)
+## Avanverat
+
+## 3. Köra lokalt på en NAS (med en webserver som Apache eller liknande)
 
 Om du vill köra sidan på en NAS (t.ex. Asustor, Synology, QNAP) måste du använda de kompilerade HTML/JavaScript-filerna.
 
