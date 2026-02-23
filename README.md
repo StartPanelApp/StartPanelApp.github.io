@@ -28,11 +28,8 @@ Du kan se status och styra enheter direkt från sidan (beroende på hur du kör 
 
 ---
 
-## ⭐ Hur du kan använda sidan
+# ⭐ Hur du kan använda sidan
 
-Det finns två sätt att köra den, beroende på vad du vill göra och vilken funktionalitet du behöver.
-
----
 
 ## 1. Kör direkt från GitHub Pages (enklast)
 
