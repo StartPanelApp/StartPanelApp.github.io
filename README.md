@@ -47,6 +47,7 @@ Det här är det absolut enklaste sättet att använda sidan.
 
 **Läsa ut Homey ID-nr:**  
 Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud
+Kopiera koden och klistra in i appen Settings > Homey > "Homey ID".
 
 **Skapa API-kod:**  
 Inställningar > API-nycklar. Skapa Ny API Nyckel. ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler).  
