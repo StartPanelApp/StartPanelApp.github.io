@@ -50,7 +50,8 @@ Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud
 Kopiera koden och klistra in i appen Settings > Homey > "Homey ID".
 
 **Skapa API-kod:**  
-Inställningar > API-nycklar. Skapa Ny API Nyckel. ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler).  
+Inställningar > API-nycklar.  
+Skapa Ny API Nyckel - Ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler).  
 Kopiera koden och klistra in i appen Settings > Homey > "API Key / Bearer Token".
 
 ---
@@ -67,12 +68,12 @@ Detta ger ett renare gränssnitt utan adressfält och fungerar perfekt i kiosk-l
 
 Appen hamnar nu bland dina andra appar och kan startas som vilken annan app som helst.
 
-** Uppdateringar **
+**Uppdateringar**
 
 Appen uppdateras automatiskt när nya versioner publiceras på GitHub.
 Ingen manuell ominstallation behövs.
 
-🔒 ** (Valfritt) Aktivera kiosk / låst läge på Android **
+🔒 **(Valfritt) Aktivera kiosk / låst läge på Android**
 
 Perfekt för en dedikerad kontrollpanel för Homey Pro 2023
 För väggmonterad surfplatta rekommenderas skärmfästning i Android:
