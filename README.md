@@ -38,55 +38,38 @@ Det finns två sätt att köra den, beroende på vad du vill göra och vilken fu
 
 Gå bara till adressen:
 
-👉 **https://nicce70.github.io/StartPanel/**
+👉 **https://startpanelapp.github.io/**
 
 Det här är det absolut enklaste sättet att använda sidan.
 
-**Begränsningar när du kör via GitHub Pages:**
+**För att ansluta till Homey:**
 
-- Du kan **bara styra Homey via webhooks**
-- Du kan **inte läsa tillbaka status** från Homey
-  (Homey kräver att webbsidan körs lokalt i samma nätverk för detta)
+- Du måste ha en Homey Pro 2023 eller nyare
+- Du behöver ditt Homey ID-nr och en API-kod. Och sen sker anslutningen via Homey Cloud, med LIVE uppdateringar!
+- Alternativt använder du bara **webhooks**, då behövs inga koder eller behörighet, men är väldigt begränsat. Fungerar med äldre Homey.
 
-Allt annat i appen fungerar som vanligt.
+**Läsa ut Homey ID-nr:**
+Du hittar ditt Homey ID nr här
+Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud
+
+**Skapa API-kod:**
+Inställningar > API-nycklar. Skapa Ny API Nyckel. ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler). 
+Kopiera koden och klistra in i appen Settings > Homey > "API Key / Bearer Token".
+
 
 ---
 
-# OBS!
-Sättet nedan kräver att du också plockar ut en PAT-kod (API-nyckel) från din Homey Pro via:  
-Inställningar > API-nycklar - + Ny API Nyckel. Kopiera den och spara, den ska klistras in i appen Settings > Homey > Personal Access Token.
-
-- Och värt att tillägga, enbart Polling fungerar i dagsläget, dvs den hämtar all data från Homey med jämna mellanrum (som du anger), så det blir tyvärr ingen Live uppdatering vilket kräver WebSocket (wss) via proxy, något som i nuläget inte är implementerat.
-
----
-
-## 2. Köra på en NAS (med en webserver som Apache eller liknande)
+## 2. Köra lokalt på en NAS (med en webserver som Apache eller liknande)
 
 Om du vill köra sidan på en NAS (t.ex. Asustor, Synology, QNAP) måste du använda de kompilerade HTML/JavaScript-filerna.
 
-De färdiga kompilerade filerna ligger här i GitHub-repot:
-👉 /docs (det är samma innehåll som normalt hamnar i “dist/” efter en build)
+De färdiga kompilerade filerna du behöver är:
 
-Det här är viktiga skillnaden:
-
-- NAS:ens server kan inte köra okompilerad TypeScript eller utvecklingskod, den kan bara servera färdiga statiska filer (HTML, JS, CSS), därför måste man använda den kompilerade versionen som ligger i mappen /docs. Det är dessa filer Apache/Nginx använder för att köra sidan (index.html & mappen /assets)
 
 ⭐ Måste jag vara i samma nätverk som Homey?
 
-Ja – om du vill både styra och läsa status.
-
-Undantag:
-Om du använder VPN funkar allt fullt ut var du än är, för det blir som att du kör lokalt.
-
-⭐ Funktioner
-
-Favoritlänkar med grupperingar
-
-Widgets: väder, radio, tid, kalender m.m.
-
-Backup/export av all konfiguration (sparas lokalt i webbläsaren)
-
-Homey-integration: styrning, status, enhetslistor
+Nej - om du ansluter till Homey via molnet
+Ja – om du vill ansluta lokalt och använda polling. Undantag: Om du använder VPN funkar allt fullt ut var du än är, för det blir som att du kör lokalt.
 
 ---
 
@@ -94,11 +77,11 @@ Homey-integration: styrning, status, enhetslistor
 
 0. **Du måste ha en webserver aktiverad på din NAS** - har du inte redan det, hoppa ner till separata instruktioner för detta längre ner!
 
-1. Öppna projektets GitHub-sida https://github.com/Nicce70/StartPanel och gå till mappen som heter “docs”. Det är där de färdiga kompilerade filerna ligger. Detta är samma filer som normalt hamnar i “/dist” när man gör en build, men de finns redan färdiga i “/docs”.
+1. Öppna projektets GitHub-sida https://github.com/StartPanelApp/StartPanelApp.github.io
 
-2. Ladda ner filerna från mappen “/docs” till din dator. Det du behöver är:
+2. Ladda ner filerna till din dator. Det du behöver är:
 
-index.html och hela mappen “assets” (med alla JavaScript-, CSS- och bildfiler)
+index.html och hela mappen “/assets” (med alla JavaScript-, CSS- och bildfiler)
 
 3. Logga in på din NAS och öppna den webserver du använder (t.ex. Apache eller Nginx). 
 På de flesta NAS finns en mapp som heter “web”, “www” eller liknande där man placerar webbfiler.
@@ -120,9 +103,9 @@ http://din-nas-ip-adress/
 eller om du lade filerna i en undermapp:  
 http://din-nas-ip-adress/StartPanel/
 
-5. Sidan ska nu starta direkt från NAS:en. Alla funktioner som inte kräver Homey kommer att fungera direkt.
+5. Sidan ska nu starta direkt från NAS:en. 
 
-6. Om du vill använda Homey-integration (styra enheter och hämta status) måste du befinna dig i samma nätverk som din Homey Pro. Alternativt kan du använda VPN. Då fungerar allt på samma sätt som om du var hemma.
+6. Om du vill använda Homey-integration (styra enheter och hämta status) lokalt måste du befinna dig i samma nätverk som din Homey Pro. Alternativt kan du använda VPN. Då fungerar allt på samma sätt som om du var hemma. Eller ansluta direkt via Homey Cloud.
 
 7. Alla inställningar och favoritlänkar du skapar sparas automatiskt i webbläsaren via LocalStorage. Det innebär att inställningarna är unika för varje webbläsare och enhet du använder. (Du kan göra backup och läsa in den filen i en annan webbläsare)
 
@@ -191,14 +174,13 @@ Så här gör du:
 Klart ✔  
 Se till att göra Backup ofta! Och förvara filen utom räckhåll från obehöriga då den inte är krypterad! 
  
-## ❓ Kan dashboarden synka automatiskt?
+## ❓ Kan dashboarden synka automatiskt mellan enheter?
 
-Inte i nuläget.
-Auto-sync skulle kräva molnlagring, konto eller någon extern backend — och projektet är byggt för att fungera helt lokalt, utan server, utan login och utan att spara användarens data någonstans.
+Nej. En sådan möjlighet skulle kräva en molnlagring, konto eller någon extern backend — projektet är byggt för att spara sin data helt lokalt, utan server och login.
  
 ## ❓ Innehåller backupfilen känsliga uppgifter? (t.ex. Homey PAT-tokens)
 
-Backupfilen kan innehålla:
+Ja, backupfilen kan innehålla:
 
 - din dashboard-layout
 - widgetkonfigurationer
@@ -226,15 +208,11 @@ Med detta sagt är det <b>extra viktigt</b> att du gör backup regelbundet, för
  
 ## ❓ Måste jag köra lokalt på en NAS?
 
-Nej — men det ger fler funktioner.
-
-Körsätt -	  Funktioner  
-GitHub Pages -   Webhooks (skicka kommandon)  
-Lokalt / NAS -   Läsa sensorer + styra enheter (polling)  
+Nej.
  
 ## ❓ Fungerar den bara med Homey Pro 2023/2026?
 
-Ja när polling används (läsa + styra).
+Ja, när moln eller polling används (läsa + styra).
 Med enbart Webhook (skicka kommandon) kan äldre modeller fungera.
 
 (PAT / API-kod behövs för full funktion — och det har Homey Pro 2023 och nyare.)
@@ -259,7 +237,7 @@ Vilken version respektive .js fil är ser man på GitHub under /docs/assets
 
 ## ❓ Är detta en officiell Homey App?
 
-- Nej, och den har begränsad Homey integration
+- Nej
 
 ## ❓ Vad händer vid uppdateringar – försvinner min data?
 
@@ -280,38 +258,13 @@ Därför rekommenderas starkt Backup & Restore regelbundet.
 Ja.  
 Det enda är att en liten donations banner dyker upp med långa mellanrum om att stödja kattstallet, vilket är helt friviligt så klart. Det är det enda.
 
-## ❓ Varför uppdaterar inte dashboarden i realtid? (t.ex. MQTT/WebSocket)
+## ❓ Uppdaterar dashboarden i realtid? 
 
-Dashboarden använder polling för att hämta sensorer och enhetsstatus från Homey.
-Polling betyder att appen frågar Homey med ett visst tidsintervall (t.ex. var 10 sek, var 20 sek, var 30 sek osv).
+Ja - när du ansluter via molnet.
 
+Nej - när du ansluter lokalt och dashboarden använder polling för att hämta sensorer och enhetsstatus från Homey.
+(Polling betyder att appen frågar Homey med ett visst tidsintervall, t.ex. var 10 sek, var 20 sek, var 30 sek osv.)
 Du kan själv ställa in intervallet under Settings > Homey > Polling Interval.
-
-👉 Varför just polling?
-
-För att det är:
-
-✔ enkelt att komma igång med  
-✔ fungerar på alla installationer  
-✔ kräver ingen extra mjukvara  
-✔ fungerar även om du hostar via GitHub Pages  
-✔ fungerar även utan NAS eller MQTT Broker  
-
-Polling är dessutom robust och fungerar även om Homey omstartas, nätet hänger sig eller skript kraschar.
-
-## 👉 Varför ingen MQTT / WebSocket / realtidsuppdatering?
-
-Realtid är möjligt, men betydligt mer avancerat.
-Det skulle kräva t.ex.:
-
-- MQTT broker (på NAS eller liknande)
-- MQTT Hub på Homey
-- konfigurering av topics/events
-- extra inställningar i dashboarden
-
-Det blir snabbt krångligt för många användare, och målet med projektet är att man ska kunna bara köra utan extra komponenter.
-
-Polling funkar “tillräckligt bra” för de flesta användningar (lampor, sensorer, status etc) och är enkelt att komma igång med.
 
 ## ❓ Måste jag ha en Homey för att använda den här appen?
 
@@ -362,21 +315,13 @@ Detta är den direkta bildlänken till kameran.
 Klart ✔
 
 
-## ❓ Varför måste jag köra StartPanel lokalt via en egen webbserver för att integrera med Homey Pro?
-
-Webbläsare har inbyggda säkerhetsregler som hindrar webbsidor från att kommunicera direkt med lokala enheter på ditt nätverk. Detta kallas CORS (Cross-Origin Resource Sharing). En HTTPS-sida får till exempel inte prata med en HTTP-enhet på det lokala nätet.
-
-Genom att köra StartPanel lokalt (via t.ex. en liten webbserver) kringgår man dessa begränsningar och kan kommunicera med Homey Pro i LAN:et.
-
-Vissa enheter — till exempel iPad/Safari — kan ändå blockera förfrågningar trots att allt körs lokalt och ligger på samma nät, just på grund av extra hårda säkerhetsregler i webbläsaren. Därför behövs ibland lokalt webbhostande för att få full funktion.
-
 
 ## ❓ Varför kan man inte lägga in länkar till lokala HTML-sidor eller appar på datorn/mobilen?
 
-Samma här, webbläsare blockerar av säkerhetsskäl länkar som skulle kunna öppna lokala filer eller köra appar direkt på din enhet. Detta förhindrar t.ex. länkar till file://, C:\…, app://, eller lokala .html-filer samt direkta appstarter. Det är en säkerhetsfunktion i webbläsare för att skydda användaren.
+Webbläsare blockerar av säkerhetsskäl länkar som skulle kunna öppna lokala filer eller köra appar direkt på din enhet. Detta förhindrar t.ex. länkar till file://, C:\…, app://, eller lokala .html-filer samt direkta appstarter. Det är en säkerhetsfunktion i webbläsare för att skydda användaren.
 
 ---
 
-Besök [StartPanel på GitHub Pages](https://nicce70.github.io/StartPanel/) för att testa appen live!
+Besök [StartPanel på GitHub Pages](https://startpanelapp.github.io/) för att testa appen live!
 
 
