@@ -89,7 +89,7 @@ Nu kan användaren inte lämna appen utan PIN-kod.
 
 ---
 
-## Avanverat
+## Avancerat
 
 ## 3. Köra lokalt på en NAS (med en webserver som Apache eller liknande)
 
