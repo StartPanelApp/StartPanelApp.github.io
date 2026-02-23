@@ -45,12 +45,11 @@ Det här är det absolut enklaste sättet att använda sidan.
 - Du behöver ditt Homey ID-nr och en API-kod. Och sen sker anslutningen via Homey Cloud, med LIVE uppdateringar!
 - Alternativt använder du bara **webhooks**, då behövs inga koder eller behörighet, men är väldigt begränsat. Fungerar med äldre Homey.
 
-**Läsa ut Homey ID-nr:**
-Du hittar ditt Homey ID nr här
+**Läsa ut Homey ID-nr:** 
 Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud
 
-**Skapa API-kod:**
-Inställningar > API-nycklar. Skapa Ny API Nyckel. ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler). 
+**Skapa API-kod:** 
+Inställningar > API-nycklar. Skapa Ny API Nyckel. ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler).  
 Kopiera koden och klistra in i appen Settings > Homey > "API Key / Bearer Token".
 
 ---
