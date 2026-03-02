@@ -60,6 +60,7 @@ Kopiera koden och klistra in i appen Settings > Homey > "API Key / Bearer Token"
 
 Den här webbappen kan installeras som en vanlig app på din Android enhet med Chrome, en så kallad PWA App.
 Detta ger ett renare gränssnitt utan adressfält och fungerar perfekt i kiosk-läge.
+Nedan är en variant på tillvägagångssätt, det kan vara annorlunda på olika modeller, märken och versioner på system!
 
 1. Öppna webbappen i Google Chrome
 2. Tryck på ⋮ (tre punkter uppe till höger)
