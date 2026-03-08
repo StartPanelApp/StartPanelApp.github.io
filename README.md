@@ -241,7 +241,8 @@ Med detta sagt är det <b>extra viktigt</b> att du gör backup regelbundet, för
  
 ## ❓ Måste jag köra lokalt på en NAS?
 
-Nej.
+Nej. 
+(Men det kan behövas om du t.ex. vill komma åt bilder från dina lokala IP kameror.)
  
 ## ❓ Fungerar den bara med Homey Pro 2023/2026?
 
@@ -249,6 +250,15 @@ Ja, när moln eller polling används (läsa + styra).
 Med enbart Webhook (skicka kommandon) kan äldre modeller fungera.
 
 (PAT / API-kod behövs för full funktion — och det har Homey Pro 2023 och nyare.)
+
+## ❓ Kan jag se bilder från mina IP kameror?
+
+Kanske, om du kör appen lokalt på en webserver på t.ex. din NAS, så kan man med widgeten Image prova om man kan läsa ut bilder.
+Alla tillverkare har olika adresser och inte alla har denna funktion.
+Men för t.ex. en Foscam V5P anger man adressen:
+https://192.168.1.X/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=NAME&pwd=PASSWORD
+i Image widgeten, och sätter en uppdateringsfrekvens på t.ex. 1 minut.
+(Men sen beror det på hur webbläsaren tillåter detta eller inte, finns säkerthetsspärrar som kan hindra)
 
 ## ❓ Varför syns bara en bokstav och inte ikonen till länkarna ibland?
 
