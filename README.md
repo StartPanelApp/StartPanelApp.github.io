@@ -260,6 +260,8 @@ https://192.168.1.X/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=NAME&pwd=PASSWORD
 i Image widgeten, och sätter en uppdateringsfrekvens på t.ex. 1 minut.
 (Men sen beror det på hur webbläsaren tillåter detta eller inte, finns säkerthetsspärrar som kan hindra)
 
+<div align=left><img width="350" alt="CCTV example" src="img/StartPanelApp - CCTV image.png" /></div>
+
 ## ❓ Varför syns bara en bokstav och inte ikonen till länkarna ibland?
 
 Det sporadiska beteendet du ser beror på flera faktorer som är utanför appens direkta kontroll:  
