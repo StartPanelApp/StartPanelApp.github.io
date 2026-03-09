@@ -334,6 +334,8 @@ Nej, det går utmärkt att bara köra den som den är som en startsida med widge
 
 ## ❓ Hur får jag in väg- / trafik-kameror i dashboarden?
 
+<div align=left><img width="350" alt="Trafiken" src="img/startPanelApp - Vagkamera.jpg" /></div>
+
 Det går att lägga till trafikkameror som automatiskt uppdaterande bilder (stillbilder), t.ex. från Trafiken.nu eller Trafikverket.
 
 ### 🌍 Var finns kamerorna?
