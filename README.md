@@ -251,7 +251,25 @@ Med enbart Webhook (skicka kommandon) kan äldre modeller fungera.
 
 (PAT / API-kod behövs för full funktion — och det har Homey Pro 2023 och nyare.)
 
-## ❓ Kan jag se bilder från mina IP kameror?
+## ❓ Kan jag se Live-Video från mina IP kameror?
+
+Ja det kan gå, men det är flera saker som måste uppfyllas, nedan är en variant:
+
+1. Kameran måste leverera RTSP-ström.
+2. StartPanelAppen körs lokalt på en webbserver, t.ex. på NAS.
+3. go2rtc körs på NAS via Docker / Docker Engine.
+4. RTSP-strömmen måste vara H.264 (inte H.265).
+5. Videon kan ses endast på samma nätverk, alternativt via VPN.
+6. I StartPanelApp används sen Iframe-widgeten med webbadressen från go2rtc, t.ex.:  
+http://192.168.1.3:1984/stream.html?src=kamera1
+
+go2rtc fungerar som mellanhand som konverterar RTSP-strömmen till ett format som webbläsaren kan spela upp.  
+
+Det kan fungera alltså, men kräver lite setup. Ta hjälp av ChatGPT eller andra guider om du kör fast.
+
+<div align=left><img width="350" alt="CCTV example" src="img/StartPanelApp - CCTV image.png" /></div>
+
+## ❓ Kan jag se stillbilder från mina IP kameror?
 
 Kanske, om du kör appen lokalt på en webserver på t.ex. din NAS, så kan man med widgeten Image prova om man kan läsa ut bilder.
 Alla tillverkare har olika adresser och inte alla har denna funktion.
@@ -260,7 +278,7 @@ https://192.168.1.X/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=NAME&pwd=PASSWORD
 i Image widgeten, och sätter en uppdateringsfrekvens på t.ex. 1 minut.
 (Men sen beror det på hur webbläsaren tillåter detta eller inte, finns säkerthetsspärrar som kan hindra)
 
-<div align=left><img width="350" alt="CCTV example" src="img/StartPanelApp - CCTV image.png" /></div>
+
 
 ## ❓ Varför syns bara en bokstav och inte ikonen till länkarna ibland?
 
