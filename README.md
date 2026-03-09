@@ -271,14 +271,13 @@ Det kan fungera alltså, men kräver lite setup. Ta hjälp av ChatGPT eller andr
 
 ## ❓ Kan jag se stillbilder från mina IP kameror?
 
-Kanske, om du kör appen lokalt på en webserver på t.ex. din NAS, så kan man med widgeten Image prova om man kan läsa ut bilder.
-Alla tillverkare har olika adresser och inte alla har denna funktion.
-Men för t.ex. en Foscam V5P anger man adressen:
-https://192.168.1.X/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=NAME&pwd=PASSWORD
-i Image widgeten, och sätter en uppdateringsfrekvens på t.ex. 1 minut.
-(Men sen beror det på hur webbläsaren tillåter detta eller inte, finns säkerthetsspärrar som kan hindra)
+Kanske, om du kör appen lokalt på en webserver på t.ex. din NAS, så kan man med widgeten Image prova om man kan läsa ut bilder.  
+Alla tillverkare har olika adresser och inte alla har denna funktion.  
+Men för t.ex. en Foscam V5P anger man adressen:  
+https://192.168.1.X/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=NAME&pwd=PASSWORD  
+i Image widgeten, och sätter en uppdateringsfrekvens på t.ex. 1 minut.  
 
-
+(Men sen beror det på om webbläsaren tillåter detta eller inte, finns säkerthetsspärrar som kan hindra)  
 
 ## ❓ Varför syns bara en bokstav och inte ikonen till länkarna ibland?
 
