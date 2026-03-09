@@ -1,4 +1,4 @@
-<div align=center><img width="1200" alt="StartPanel Logo" src="StartPanelScreenshot.jpg" /></div>
+<div align=center><img width="1200" alt="StartPanel Logo" src="img/StartPanelScreenshot.jpg" /></div>
 
 # StartPanelApp
 
