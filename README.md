@@ -3,6 +3,7 @@
 </div>
 
 # StartPanel
+<i>Personal Control Center for your browser and Homey Pro</i>
 
 🌍 Languages: **English** | [Svenska](README_sv.md) 🇸🇪 
 
