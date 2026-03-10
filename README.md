@@ -26,7 +26,7 @@ Run it directly in your browser:
 https://startpanelapp.github.io/
 
 
-The rest of this documentation is written in **Swedish**.
+For documentation in **Swedish** 🇸🇪 go here -> [Svenska](README_sv.md) 🇸🇪 
 
 ---
 
