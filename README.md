@@ -487,7 +487,7 @@ Examples of what you can display and control:
 
 This allows you to build an intuitive and visual dashboard where your smart home devices are positioned exactly where they belong. And this will get you an fast and easy way to see whats on and off and so on.
 
-To create a Layout dashboard tab:
+### To create a Layout dashboard tab:  
 Go to Settings > Dashboards  
 Click "Add Homey Layout"  
 
