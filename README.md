@@ -4,7 +4,7 @@
 
 # StartPanel
 
-🌍 Languages: **English** | [Svenska](README_sv.md)
+🌍 Languages: **English** | [Svenska](README_sv.md) 🇸🇪 
 
 StartPanel is a lightweight and customizable **browser start page and dashboard**, built with **TypeScript** and **Vite**.  
 It allows you to collect links, widgets, and **Homey Pro controls** in one place, running entirely in the browser with no backend or database required.  
@@ -31,152 +31,245 @@ The rest of this documentation is written in **Swedish**.
 ---
 
 
-# StartPanelApp – En Webbaserad start- och dashboardsida, med Homey integration
+# StartPanelApp – Web-based Start Page & Dashboard with Homey Integration
 
-Detta är en webbaserad start-/dashboardsida gjord i **TypeScript** och med stor hjälp av Google AI Studio.  
+This is a web-based **start page / dashboard** written in **TypeScript**, developed with significant help from Google AI Studio.
 
-> **Obs:** Detta är *inte* en officiell Homey-app, utan något jag byggt för privat bruk egentligen.
+> **Note:** This is *not* an official Homey app. It is a personal project that I originally built for my own use.
 
-Det är en kombination av **startpage och dashboard** där du kan samla länkar och olika widgets.  
-Alla inställningar, widgets, favoritlänkar m.m. som du skapar sparas automatiskt i din webbläsares LocalStorage (inget ligger någon annanstans)
+StartPanel combines a **start page and dashboard** where you can collect links and different widgets in one place.
 
-För vanliga frågor FAQ, se längre ner på sidan.  
+All settings, widgets, favorite links, and layout data are automatically stored in your browser's **LocalStorage**, meaning nothing is stored externally.
 
-## Integration med Homey Pro 2023
-
-För att använda den mot Homey Pro 2023, ansluter du via molnet, kör appen lokalt på en NAS eller använder bara webhooks.  
-Du kan se status och styra enheter direkt från sidan (beroende på hur du kör appen).
+For common questions, see the **FAQ section further down** on this page.
 
 ---
 
-# ⭐ Hur du kan använda sidan
+## Homey Pro 2023 Integration
 
+To use StartPanel with **Homey Pro 2023**, you can connect through the **Homey Cloud**, run the app locally on a NAS, or simply use **webhooks**.  
+Depending on how you run the app, you can view device status and control devices directly from the page.
 
-## 1. Kör direkt från GitHub Pages (enklast)
+---
 
-Gå bara till adressen:
+# ⭐ How to Use StartPanelApp
+
+## 1. Run directly from GitHub Pages (easiest)
+
+Simply open:
 
 👉 **https://startpanelapp.github.io/**
 
-Det här är det absolut enklaste sättet att använda sidan.
+This is the easiest way to use StartPanelApp.
 
-**För att ansluta till Homey:**
+### Connecting to Homey
 
-- Du måste ha en Homey Pro 2023 eller nyare
-- Du behöver ditt Homey ID-nr och en API-kod. Och sen sker anslutningen via Homey Cloud, med LIVE uppdateringar!
-- Alternativt använder du bara **webhooks**, då behövs inga koder eller behörighet, men är väldigt begränsat. Fungerar med äldre Homey.
+Requirements:
 
-**Läsa ut Homey ID-nr:**  
-Settings > General (Allmänt) > Cloud (Moln) > Homey Cloud  
-Kopiera koden och klistra in i appen Settings > Homey > "Homey ID".
+- A **Homey Pro 2023 or newer**
+- Your **Homey ID**
+- A **Homey API Key**
 
-**Skapa API-kod:**  
-Inställningar > API-nycklar.  
-Skapa Ny API Nyckel - Ge den alla behörigheter som behövs (minst Enheter, Flows, Variabler).  
-Kopiera koden och klistra in i appen Settings > Homey > "API Key / Bearer Token".
+The connection is made through **Homey Cloud**, which provides **live updates**.
 
----
+Alternatively, you can use **webhooks only**, which requires no authentication but provides limited functionality.  
+(Webhooks also work with older Homey models.)
 
-## 2. Installera som en App (PWA)
+### Finding your Homey ID
 
-Den här webbappen kan installeras som en vanlig app på din Android enhet med Chrome, en så kallad PWA App.
-Detta ger ett renare gränssnitt utan adressfält och fungerar perfekt i kiosk-läge.
-Nedan är en variant på tillvägagångssätt, det kan vara annorlunda på olika modeller, märken och versioner på system!
+Go to:
+Settings → General → Cloud → Homey Cloud  
+Copy the **Homey ID** and paste it into:  
+StartPanel → **Settings → Homey → Homey ID**  
 
-1. Öppna webbappen i Google Chrome
-2. Tryck på ⋮ (tre punkter uppe till höger)
-3. Välj "Lägg till på startskärmen" (eller installera App beroende på version)
-4. Bekräfta genom att trycka Installera
+### Creating an API Key
 
-Appen hamnar nu bland dina andra appar och kan startas som vilken annan app som helst.
+Go to:  
+Settings → API Keys  
+Create a **new API key** and give it the required permissions  
+(at minimum **Devices, Flows, and Variables**).  
 
-**Uppdateringar**
-
-Appen uppdateras automatiskt när nya versioner publiceras på GitHub.
-Ingen manuell ominstallation behövs.
-
-🔒 **(Valfritt) Aktivera kiosk / låst läge på Android**
-
-Perfekt för en dedikerad kontrollpanel för Homey Pro 2023
-För väggmonterad surfplatta rekommenderas skärmfästning i Android:
-
-- Gå till Inställningar → Säkerhet
-- Aktivera Skärmfästning
-- Öppna appen
-- Tryck på Översiktsknappen (senaste appar)
-- Tryck på nålikonen för att fästa appen
-
-Nu kan användaren inte lämna appen utan PIN-kod.
-(Förfarande ovan KAN skilja sig rejält mellan Android enheter, och vissa saknar denna funktion helt)
-
-## Se vanliga frågor FAQ längre ner för mer hjälp och tips
+Copy the key and paste it into:  
+StartPanel → **Settings → Homey → API Key / Bearer Token**  
 
 ---
 
-## Avancerat
+## 2. Install as an App (PWA)
 
-## 3. Köra lokalt på en NAS (med en webserver som Apache eller liknande)
+This web app can be installed on Android using **Google Chrome** as a **Progressive Web App (PWA)**.
 
-För dig som vill undvika molntjänster och github beroende, så kan du köra sidan lokalt på en NAS (t.ex. Asustor, Synology, QNAP).  
-Dock får man då använda sig av polling och det blir alltså inte live uppdatering utan det blir med en vald tids-fördröjning.
+This provides a cleaner interface without the browser address bar and works perfectly for **tablet dashboards or kiosk setups**.
 
-⭐ Måste jag vara i samma nätverk som Homey?
+Steps may vary depending on device and Android version.
 
-Ja – om du vill ansluta lokalt och använda polling. (Undantag: Om du använder VPN funkar allt fullt ut var du än är, för det blir som att du kör lokalt.)  
-Nej - om du ändå vill ansluta till Homey via molnet vilket också fungerar, fast du kör själva koden lokalt.
+### Installation
+
+1. Open the web app in **Google Chrome**
+2. Tap **⋮ (three dots)** in the top-right corner
+3. Select **Add to Home screen** or **Install App**
+4. Confirm by tapping **Install**
+
+The app will now appear among your other apps and can be launched like a normal application.
+
+### Updates
+
+The app updates automatically whenever a new version is published on GitHub.  
+No manual reinstallation is required.
 
 ---
 
-## Instruktioner för att köra StartPanel på en NAS (Apache, Nginx, Asustor, Synology, QNAP)
+### 🔒 Optional: Enable Kiosk / Screen Pinning Mode on Android
 
-0. **Du måste ha en webserver aktiverad på din NAS** - har du inte redan det, hoppa ner till separata instruktioner för detta längre ner!
+This is perfect for a **dedicated Homey control panel** on a wall-mounted tablet.
 
-1. Öppna projektets GitHub-sida https://github.com/StartPanelApp/StartPanelApp.github.io
+Steps (may vary between Android devices):
 
-2. Ladda ner filerna till din dator. Det du behöver är:
+1. Go to **Settings → Security**
+2. Enable **Screen Pinning**
+3. Open the StartPanel app
+4. Tap the **Recent Apps** button
+5. Tap the **pin icon**
 
-index.html och hela mappen “/assets” (med alla JavaScript-, CSS- och bildfiler)
+The user can now not leave the app without entering the device PIN.
 
-3. Logga in på din NAS och öppna den webserver du använder (t.ex. Apache eller Nginx). 
-På de flesta NAS finns en mapp som heter “web”, “www” eller liknande där man placerar webbfiler.
+(Some Android devices may not support this feature.)
 
-Kopiera filen index.html och hela mappen /assets till webserverns katalog på din NAS. Det är mycket viktigt att både index.html och mappen /assets ligger på samma nivå i samma mapp, alltså tillsammans sida vid sida.
-(Byt inte namn på index.html — den måste heta exakt så för att webbsidan ska fungera som förväntat.)
+---
 
-Strukturen i webbkatalogen ska alltså se ut så här:
+## See the **FAQ section further down** for additional help and tips.
+
+---
+
+## Advanced Usage
+
+If you want to avoid cloud services or GitHub dependencies, you can run StartPanel locally on a NAS such as:
+
+- Asustor
+- Synology
+- QNAP
+
+When running locally, the system uses **polling instead of live updates**, meaning device updates occur with a small delay based on the selected polling interval.
+
+⭐ Do I need to be on the same network as Homey?  
+
+**Yes** – if you connect locally using polling.
+
+**Exception:** If you use **VPN**, everything works normally because the connection behaves as if you were on the same local network.
+
+**No** – if you connect through **Homey Cloud**, which works regardless of where the web page itself is hosted.
+
+---
+
+# Running StartPanel on a NAS (Apache, Nginx, Asustor, Synology, QNAP)
+
+### 0. Make sure a web server is enabled on your NAS
+
+If you do not already have a web server installed, see the instructions further below.
+
+---
+
+### 1. Open the project GitHub page
+
+https://github.com/StartPanelApp/StartPanelApp.github.io
+
+---
+
+### 2. Download the required files
+
+You only need:
+
+- `index.html`
+- the entire `/assets` folder
+
+(The folder contains all JavaScript, CSS, and image files.)
+
+---
+
+### 3. Upload the files to your NAS web directory
+
+Log into your NAS and open the web server (Apache, Nginx, etc.).
+
+Most NAS systems have a folder called something like: “web”, “www” or similar.
+
+Copy **index.html** and the entire **/assets** folder into that directory.
+
+Important:
+
+- `index.html` **must keep its name**
+- `/assets` must be located in the **same folder**
+
+Example structure:
 ```
 /web
 ├── index.html
 └── assets/
-   └── (alla JS/CSS/bilder)
+   └── (all JS/CSS/bilder)
 ```
 
-4. När filerna ligger på plats, öppna webbläsaren och gå till adressen för din NAS webbserver, till exempel:  
-http://din-nas-ip-adress/
+### 4. Open the page in your browser
 
-eller om du lade filerna i en undermapp, t.ex. StartPanel:  
-http://din-nas-ip-adress/StartPanel/
+Go to for exempel:  
+http://tour-nas-ip-address/
 
-5. Sidan ska nu starta direkt från NAS:en. 
-
-6. Om du vill använda Homey-integration (styra enheter och hämta status) lokalt måste du befinna dig i samma nätverk som din Homey Pro. Alternativt kan du använda VPN. Då fungerar allt på samma sätt som om du var hemma. Eller ansluta direkt via Homey Cloud.
-
-7. Alla inställningar och favoritlänkar du skapar sparas automatiskt i webbläsaren via LocalStorage. Det innebär att inställningarna är unika för varje webbläsare och enhet du använder. (Du kan göra backup och läsa in den filen i en annan webbläsare)
-
-8. Webhooks fungerar även om du inte är i samma nätverk som Homey, men att läsa status och enhetsvärden kräver att webbsidan körs lokalt på samma nätverk eller via VPN som sagt.
+Or if you placed it in a subfolder, for example StartPanel:  
+http://your-nas-ip-address/StartPanel/
 
 ---
 
-## INSTALLERA EN WEBSERVER PÅ DIN NAS
+### 5. The page should now load directly from your NAS.
 
-**Så här startar du en webserver på din NAS (generella instruktioner)**
+---
 
-De flesta NAS-enheter kan köra en enkel webbserver som låter dig visa statiska webbsidor (HTML, CSS, JavaScript). Det är allt som behövs för StartPanel. Så här gör du oavsett NAS-modell:
+### 6. Using Homey locally
 
-1. **Logga in i din NAS administrativa webbpanel via webbläsaren** (t.ex. http://din-nas-ip-adress:5000 eller http://din-nas-ip-adress:8000 beroende på modell).
+To control devices and read status locally:
 
-2. **Öppna NAS:ens app-/paketcenter.**
-Sök efter någon av följande:
+- You must be on the **same network as your Homey Pro**
+- Or use **VPN**
+
+Alternatively, you can still connect via **Homey Cloud**.
+
+---
+
+### 7. Local settings storage
+
+All settings and links are stored in **LocalStorage**.
+
+This means settings are unique for each **browser and device**.
+
+However, you can create a **backup file** and restore it on another browser or device.
+
+---
+
+### 8. Webhooks
+
+Webhooks work even when you are **not on the same network** as Homey.
+
+However, reading device status requires the page to run:
+
+- on the same network
+- or through VPN.
+
+---
+
+# Installing a Web Server on Your NAS
+
+Most NAS systems can run a simple web server capable of hosting static websites (HTML, CSS, JavaScript).  
+That is all StartPanel requires.
+
+---
+
+### 1. Log in to your NAS admin interface
+
+Open your NAS control panel in a browser, for example:  
+http://your-nas-ip:5000  
+(or another port depending on your NAS model)
+
+---
+
+### 2. Open the App / Package Center
+
+Search for something like:
 ```
 “Web Server”
 “Apache”
@@ -185,9 +278,20 @@ Sök efter någon av följande:
 “Hosting”
 “WWW Server”
 ```
-3. **Installera webservern med standardinställningar.**
-På vissa NAS-modeller aktiveras även PHP eller MySQL, men det behövs inte för denna app — du kan ignorera alla sådana extra funktioner.
-När webservern är installerad finns det alltid en webbmapp där du ska lägga dina filer. Den brukar heta något i stil med:
+---
+
+### 3. Install the web server
+
+Install it with **default settings**.
+
+Some NAS systems may also install:
+
+- PHP
+- MySQL
+
+These are **not required** for StartPanel and can be ignored.
+
+After installation, a web directory will be created, usually named something like:
 ```
 /web
 /www
@@ -196,217 +300,310 @@ När webservern är installerad finns det alltid en webbmapp där du ska lägga 
 /WebServer
 /volume1/web (Synology)
 ```
-Webbmappen är den katalog som webservern visar när du går till din NAS IP-adress i webbläsaren.
-
-4. **Starta om webservern via NAS kontrollpanel** (ofta heter det “Restart Service”).
-
-5. **Klart!**
-Din NAS kör nu en lokal webbserver, nu kan du återgå till att installera själva appen StartPanel enligt tidigare punkt på din NAS.
-
-Tips:
-Om du vill komma åt sidan även utanför hemmet kan du använda VPN.
+This folder is what the web server serves when visiting your NAS IP address.
 
 ---
 
-# 📌 FAQ (vanliga frågor)
+### 4. Restart the web server
 
-## ❓ Hur synkar jag dashboarden mellan flera enheter?
+Restart the service via the NAS control panel.
 
-Dashboarden sparas lokalt i webbläsaren (LocalStorage) och lagras inte i molnet.
-Det är ett privacy-first designval, så man får helt enkelt kopiera settings filen till en ny webbläsare manuellt.
+---
 
-Så här gör du:
+### 5. Done!
 
-1. Settings > Backup & Restore
+Your NAS is now running a web server, and you can proceed with the earlier instructions to install StartPanel.
 
-2. Tryck Export Data → ladda ner JSON-filen
+💡 Tip:  
+If you want to access the dashboard outside your home network, consider using **VPN**.
 
-3. Flytta filen till en annan enhet (t.ex. iPad)
+---
 
-4. På andra enheten: Settings > Backup & Restore > Import Data
+# 📌 FAQ (Frequently Asked Questions)
 
-Klart ✔  
-Se till att göra Backup ofta! Och förvara filen utom räckhåll från obehöriga då den inte är krypterad! 
+## ❓ How do I sync the dashboard between multiple devices?
+
+The dashboard is stored locally in your browser using **LocalStorage** and is not stored in the cloud.
+
+This is a **privacy-first design choice**, so settings must be copied manually between devices.
+
+Steps:
+
+1. Go to **Settings → Backup & Restore**
+2. Click **Export Data** to download the JSON file
+3. Move the file to another device (for example an iPad)
+4. On the other device: **Settings → Backup & Restore → Import Data**
+
+Done ✔
+
+Make sure to **create backups regularly**.  
+Store the backup file safely since it is **not encrypted**.
+
+---
  
-## ❓ Kan dashboarden synka automatiskt mellan enheter?
+## ❓ Can the dashboard sync automatically between devices?
 
-Nej. En sådan möjlighet skulle kräva en molnlagring, konto eller någon extern backend — projektet är byggt för att spara sin data helt lokalt, utan server och login.
+No.
+
+Automatic synchronization would require a **cloud service, user accounts, or a backend server**.
+
+StartPanel is intentionally designed to store all data **locally without login or external services**.
+
+---
+
+## ❓ Does the backup file contain sensitive information? (e.g. Homey tokens)
+
+Yes, the backup file may contain:
+
+- your dashboard layout
+- widget configurations
+- authentication tokens (for example Homey PAT)
+
+This is not a security issue by itself, but the file should be treated as a **personal configuration file**.
+
+Recommendations:
+
+- store it in a safe location
+- avoid sending it unencrypted
+- do not share it unless you want to share your setup
+
+This is part of the project's **privacy-focused design** — no data is sent to external services.
+
+---
  
-## ❓ Innehåller backupfilen känsliga uppgifter? (t.ex. Homey PAT-tokens)
+## ❓ Why is nothing stored in the cloud?
 
-Ja, backupfilen kan innehålla:
+Because the project is designed to:
 
-- din dashboard-layout
-- widgetkonfigurationer
-- eventuella tokens (t.ex. Homey PAT)
+- run completely **offline**
+- avoid **accounts, login systems, and backend servers**
+- give users **full control over their data**
+- avoid dependencies on cloud services that may disappear
 
-Det är ingen säkerhetsrisk i sig, men filen bör hanteras som en personlig konfigurationsfil:
+It also aligns well with the general **Homey community preference of owning their own hardware setup**.
 
-- lagra den på en trygg plats
-- undvik att skicka den okrypterat
-- dela den inte om du inte vill dela din setup
+Because of this design, it is **extra important to create backups regularly**, since browser storage may be cleared due to:
 
-Detta är en del av projektets integritetsvänliga upplägg — ingen information skickas till molntjänster eller tredje part.
+- browser updates
+- crashes
+- app updates
+- system changes
+
+---
  
-## ❓ Varför sparas inget i molnet?
+## ❓ Do I need to run it locally on a NAS?
 
-För att:
+No.
 
-- kunna köras helt offline
-- undvika konton / login / backend
-- ge användaren full kontroll över sina data
-- undvika molnberoenden (t.ex. tjänster som läggs ner)
+However, running locally can be useful if you want to access **local network resources**, such as images from IP cameras.
 
-Dessutom passar det bra ihop med Homey-användares generella preferens att äga sin setup med egen hårdvara.  
-Med detta sagt är det <b>extra viktigt</b> att du gör backup regelbundet, för din webbläsare kan tappa inställningarna vid en uppdatering, crash, app-uppdatering osv!
- 
-## ❓ Måste jag köra lokalt på en NAS?
+---
 
-Nej. 
-(Men det kan behövas om du t.ex. vill komma åt bilder från dina lokala IP kameror.)
- 
-## ❓ Fungerar den bara med Homey Pro 2023/2026?
+## ❓ Does it only work with Homey Pro 2023 and newer?
 
-Ja, när moln eller polling används (läsa + styra).
-Med enbart Webhook (skicka kommandon) kan äldre modeller fungera.
+Yes, for full functionality (reading device status and controlling devices) when using **Cloud or polling**.
 
-(PAT / API-kod behövs för full funktion — och det har Homey Pro 2023 och nyare.)
+Using **webhooks only** may work with older Homey models.
 
-## ❓ Kan jag se Live-Video från mina IP kameror?
+Full functionality requires an **API token / PAT**, which is available on **Homey Pro 2023 and newer**.
 
-Ja det kan gå, men det är flera saker som måste uppfyllas, nedan är en variant:
+---
 
-1. Kameran måste leverera RTSP-ström.
-2. StartPanelAppen körs lokalt på en webbserver, t.ex. på NAS.
-3. go2rtc körs på NAS via Docker / Docker Engine.
-4. RTSP-strömmen måste vara H.264 (inte H.265).
-5. Videon kan ses endast på samma nätverk, alternativt via VPN.
-6. I StartPanelApp används sen Iframe-widgeten med webbadressen från go2rtc, t.ex.:  
+## ❓ Can I view live video from IP cameras?
+
+Yes, but several conditions must be met.
+
+Example setup:
+
+1. The camera must provide an **RTSP stream**
+2. StartPanel must run locally on a **web server** (for example on a NAS)
+3. **go2rtc** must run on the NAS using **Docker**
+4. The RTSP stream must be **H.264** (not H.265)
+5. The video can normally only be viewed on the **same network** or via **VPN**
+6. Use the **Iframe widget** with the go2rtc stream URL, for example:
 http://192.168.1.3:1984/stream.html?src=kamera1
 
-go2rtc fungerar som mellanhand som konverterar RTSP-strömmen till ett format som webbläsaren kan spela upp.  
+go2rtc acts as a **bridge**, converting the RTSP stream into a format that browsers can play.
 
-Det kan fungera alltså, men kräver lite setup. Ta hjälp av ChatGPT eller andra guider om du kör fast.
+It works well but requires some setup.
 
 <div align=left><img width="350" alt="CCTV example" src="img/StartPanelApp - CCTV image.png" /></div>
 
-## ❓ Kan jag se stillbilder från mina IP kameror?
+---
 
-Kanske, om du kör appen lokalt på en webserver på t.ex. din NAS, så kan man med widgeten Image prova om man kan läsa ut bilder.  
-Alla tillverkare har olika adresser och inte alla har denna funktion.  
-Men för t.ex. en Foscam V5P anger man adressen:  
+## ❓ Can I show still images from IP cameras?
+
+Possibly.
+
+If the app runs locally on a NAS web server, the **Image widget** may be able to fetch camera snapshots.
+
+Each manufacturer uses different URLs, and not all cameras support this feature.
+
+Example (Foscam V5P):  
 https://192.168.1.X/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=NAME&pwd=PASSWORD  
-i Image widgeten, och sätter en uppdateringsfrekvens på t.ex. 1 minut.  
 
-(Men sen beror det på om webbläsaren tillåter detta eller inte, finns säkerthetsspärrar som kan hindra)  
+Insert the URL into the **Image widget** and set a refresh interval (for example **60 seconds**).
 
-## ❓ Varför syns bara en bokstav och inte ikonen till länkarna ibland?
-
-Det sporadiska beteendet du ser beror på flera faktorer som är utanför appens direkta kontroll:  
-- Tjänsternas Cache: Ikon-tjänsterna har sin egen "cache" (ett temporärt minne). Om en tjänst misslyckas med att hämta en ikon en gång, kan den "komma ihåg" det misslyckandet ett tag. När deras cache sedan uppdateras (vilket kan ta timmar eller dagar), kan ikonen plötsligt dyka upp igen. Samma sak gäller omvänt – en fungerande ikon kan försvinna om tjänstens cache av någon anledning blir korrupt.
-- Tillfällig Otillgänglighet: Tjänsterna vi använder kan ha korta avbrott eller vara överbelastade. Om appen försöker hämta en ikon precis under ett sådant avbrott, misslyckas det. Nästa gång du laddar sidan kan tjänsten fungera igen.
-- Webbplatser som blockerar: Vissa webbplatser gillar inte att automatiska tjänster hämtar deras ikoner och kan blockera dem. Detta kan ändras över tid.
-- Din webbläsares cache: Även din egen webbläsare har en cache. Den kan ibland hålla kvar en trasig bildfil eller ett misslyckat försök att ladda en bild, vilket gör att ikonen inte visas förrän cachen rensas eller uppdateras.
-
-## ❓ Kan man ha flera Dashboards?
-Ja, det kan man.  
-Gå in under Settings > Dashboards. Där skapar du fler och redigerar befintliga.  
-Du kan välja om de ska synas som tabs eller som en drop-down meny.  
-
-## ❓ Varför ligger gamla versioner kvar under /assets?
-
-Ifall en ny version ställer till det kan man backa genom att redigera sin index.html-fil genom att ändra vilken .js fil den pekar på under /assets.  
-Vilken version respektive .js fil är ser man på GitHub under /docs/assets
-
-## ❓ Är detta en officiell Homey App?
-
-- Nej
-
-## ❓ Vad händer vid uppdateringar – försvinner min data?
-
-I normalfallet nej.
-Dashboarden ligger i webbläsarens LocalStorage och påverkas inte av vanlig koduppdatering.
-
-<b>Men</b> det kan hända om:
-- webbläsaren rensar data
-- appen byter storage-schema
-- stora versionshopp görs
-- browser addons påverkar storage
-- användaren bygger om miljön (t.ex. ny NAS)
-
-Därför rekommenderas starkt Backup & Restore regelbundet.
-
-## ❓ Är appen gratis?
-
-Ja.  
-Det enda är att en liten donations banner dyker upp med långa mellanrum om att stödja kattstallet, vilket är helt friviligt så klart. Det är det enda.
-
-## ❓ Uppdaterar dashboarden i realtid? 
-
-Ja - när du ansluter via molnet.
-
-Nej - när du ansluter lokalt och dashboarden använder polling för att hämta sensorer och enhetsstatus från Homey.
-(Polling betyder att appen frågar Homey med ett visst tidsintervall, t.ex. var 10 sek, var 20 sek, var 30 sek osv.)
-Du kan själv ställa in intervallet under Settings > Homey > Polling Interval.
-
-## ❓ Måste jag ha en Homey för att använda den här appen?
-
-Nej, det går utmärkt att bara köra den som den är som en startsida med widgets. Homey Pro är mer en extra funktion egentligen.
-
-## ❓ Hur får jag in väg- / trafik-kameror i dashboarden?
-
-<div align=left><img width="350" alt="Trafiken" src="img/startPanelApp - Vagkamera.jpg" /></div>
-
-Det går att lägga till trafikkameror som automatiskt uppdaterande bilder (stillbilder), t.ex. från Trafiken.nu eller Trafikverket.
-
-### 🌍 Var finns kamerorna?
-
-Du kan hämta dem från t.ex:
-
-- Trafiken.nu (Stockholm, Göteborg m.fl.)
-
-- Trafikverket (rikstäckande)
-
-De publicerar stillbilder som uppdateras ~1 gång per minut.
-
-### 🧩 Hur hittar jag själva bild-URL:en?
-
-Det är den kluriga delen — bildadresserna skyltas inte öppet, men går att hitta så här:
-
-1. Öppna t.ex. Trafiken.nu i Firefox eller Chrome
-
-2. Välj en kamera du vill titta på
-
-3. Tryck F12 → öppna webbutvecklarverktygen
-
-4. Gå till fliken Network / Nätverk
-
-5. Vänta tills sidan uppdaterar kamerabilden
-
-6. Leta efter en fil som slutar på .jpg (eller liknande)
-
-7. Högerklicka → Copy URL / Kopiera länkadress
-
-Detta är den direkta bildlänken till kameran.
-
-### 🖼 Hur lägger jag in den i dashboarden?
-
-1. Lägg till widgeten Image
-
-2. Klistra in bild-URL:en
-
-3. Ställ in update interval t.ex. 60 sek (lagom för trafikbilder)
-
-Klart ✔
-
-
-
-## ❓ Varför kan man inte lägga in länkar till lokala HTML-sidor eller appar på datorn/mobilen?
-
-Webbläsare blockerar av säkerhetsskäl länkar som skulle kunna öppna lokala filer eller köra appar direkt på din enhet. Detta förhindrar t.ex. länkar till file://, C:\…, app://, eller lokala .html-filer samt direkta appstarter. Det är en säkerhetsfunktion i webbläsare för att skydda användaren.
+Note that browser security restrictions may sometimes block such requests.
 
 ---
 
-Besök [StartPanel på GitHub Pages](https://startpanelapp.github.io/) för att testa appen live!
+## ❓ Why do some link icons sometimes show only a letter?
+
+This behavior is caused by factors outside the app's control:
+
+**Icon service caching**  
+Icon providers use their own cache. If they fail to fetch an icon once, they may remember the failure for a while.
+
+**Temporary service outages**  
+Icon services may be temporarily unavailable or overloaded.
+
+**Websites blocking icon scraping**  
+Some websites block automated services that try to fetch their icons.
+
+**Browser cache**  
+Your browser may cache a broken image or failed request.
+
+In many cases the icon appears again automatically later.
+
+---
+
+## ❓ Can I create multiple dashboards?
+
+Yes.
+
+Go to **Settings → Dashboards**.
+
+There you can:
+
+- create additional dashboards
+- edit existing ones
+- choose whether they appear as **tabs** or in a **dropdown menu**
+
+---
+
+## ❓ Why are old versions kept in the `/assets` folder?
+
+If a new version causes problems, you can revert to a previous version by editing **index.html** and pointing it to an older `.js` file in `/assets`.
+
+You can see which file belongs to which version on GitHub under:  
+/docs/assets
+
+## ❓ Is this an official Homey app?
+
+No.
+
+---
+
+## ❓ Will updates erase my data?
+
+Normally **no**.
+
+The dashboard configuration is stored in **LocalStorage**, which is not affected by normal code updates.
+
+However, data could be lost if:
+
+- the browser clears storage
+- the storage schema changes
+- major version upgrades occur
+- browser extensions interfere
+- the environment changes (for example moving to a new NAS)
+
+For this reason, **regular backups are strongly recommended**.
+
+---
+
+## ❓ Is the app free?
+
+Yes.
+
+Occasionally a small **donation banner** may appear encouraging support for a **cat shelter**.  
+This is completely optional.
+
+---
+
+## ❓ Does the dashboard update in real time?
+
+**Yes** when connected through **Homey Cloud**.
+
+**No** when running locally using **polling**.
+
+Polling means the app checks Homey for updates at a set interval, for example:
+
+- every 10 seconds
+- every 20 seconds
+- every 30 seconds
+
+You can configure this under:
+
+**Settings → Homey → Polling Interval**
+
+---
+
+## ❓ Do I need a Homey to use this app?
+
+No.
+
+You can use StartPanel purely as a **start page with widgets**.  
+Homey integration is simply an optional feature.
+
+---
+
+
+## ❓ Can I add road / traffic cameras to the dashboard?
+
+Example for **Sweden (Trafikverket / Trafiken.nu)**
+
+<div align=left><img width="350" alt="Traffic camera example" src="img/startPanelApp - Vagkamera.jpg" /></div>
+
+You can add traffic cameras as automatically refreshing **still images**.
+
+### 🌍 Where do the cameras come from?
+
+Examples:
+
+- Trafiken.nu (Stockholm, Gothenburg, etc.)
+- Trafikverket (nationwide Sweden)
+
+Images typically update **about once per minute**.
+
+### 🧩 How do I find the image URL?
+
+The image URLs are not publicly listed, but you can find them like this:
+
+1. Open the camera page in Chrome or Firefox
+2. Press **F12** to open Developer Tools
+3. Go to the **Network** tab
+4. Wait for the camera image to refresh
+5. Look for a file ending in **.jpg**
+6. Right-click → **Copy URL**
+
+That is the direct image URL.
+
+### 🖼 Add it to StartPanel
+
+1. Add the **Image widget**
+2. Paste the image URL
+3. Set a refresh interval (for example **60 seconds**)
+
+Done ✔
+
+---
+
+## ❓ Why can't I link to local HTML files or apps on my device?
+
+Browsers block links that attempt to open local files or launch apps directly for **security reasons**.
+
+This prevents links such as:  
+file://  
+C:\…   
+app://   
+or local .html-files. 
+
+This is a standard browser security feature designed to protect users.
+
+---
+
+Visit **https://startpanelapp.github.io/** to try the app live.
 
 
