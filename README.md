@@ -3,7 +3,7 @@
 </div>
 
 # StartPanelApp
-<i>Personal Control Center for your browser and Homey Pro</i>
+<i>- A personal Control Center for your browser and Homey Pro</i>
 
 🌍 Languages: **English** | [Svenska](README_sv.md) 🇸🇪 
 
