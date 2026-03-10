@@ -489,6 +489,8 @@ If a new version causes problems, you can revert to a previous version by editin
 You can see which file belongs to which version on GitHub under:  
 /docs/assets
 
+---
+
 ## ❓ Is this an official Homey app?
 
 No.
