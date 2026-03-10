@@ -4,6 +4,7 @@
 
 # StartPanelApp
 <i>- A personal Control Center for your browser and Homey Pro</i>
+  
 
 🌍 Languages: **English** | [Svenska](README_sv.md) 🇸🇪 
 
@@ -21,10 +22,10 @@ All settings and layout data are stored **locally in your browser**, giving you 
 - Installable as a **Progressive Web App (PWA)** for tablet or kiosk setups
 - Runs directly from **GitHub Pages** or can be hosted locally
 
-## Live demo
+## Run it directly in your browser
 
-Run it directly in your browser:  
-https://startpanelapp.github.io/
+Just go to:  
+https://startpanelapp.github.io/  
 
 
 For documentation in **Swedish** 🇸🇪 go here -> [Svenska](README_sv.md)
