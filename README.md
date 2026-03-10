@@ -450,6 +450,51 @@ Note that browser security restrictions may sometimes block such requests.
 
 ---
 
+## ❓ What is the Homey Layout feature?
+
+The Layout feature lets you place Homey device capabilities freely on top of a background image.  
+This makes it possible to create visual dashboards such as:
+
+- a house floor plan
+- a room layout
+- a technical overview
+- or any custom graphic or picture you want to use
+
+The background image is created in another program (for example a drawing tool or floor-plan editor) and then imported into StartPanel. After that you can place capabilities anywhere on the screen.  
+
+If you want to design a floor-plan image, there are several free alternatives you can use.  
+Here are some tools to help you create one:
+
+### Online Tools
+- [Floorplan Creator](https://floorplancreator.net/)
+- [RoomSketcher](https://www.roomsketcher.se/)
+- [RemPlanner](https://remplanner.com/)
+
+### Install (Desktop)
+- [Sweet Home 3D](https://www.sweethome3d.com/)
+- [FreeCAD](https://www.freecad.org/)
+
+
+Examples of what you can display and control:
+
+- Turn lights on/off
+- Adjust dimmer levels
+- See if doors or windows are open
+- View temperature or humidity
+- Monitor power consumption
+- Display sensor values
+- Display variables
+
+This allows you to build an intuitive and visual dashboard where your smart home devices are positioned exactly where they belong. And this will get you an fast and easy way to see whats on and off and so on.
+
+To create a Layout dashboard tab:
+Go to Settings > Dashboards  
+Click "Add Homey Layout"  
+
+[image coming soon]
+
+---
+
 ## ❓ Why do some link icons sometimes show only a letter?
 
 This behavior is caused by factors outside the app's control:
