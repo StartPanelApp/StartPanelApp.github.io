@@ -2,7 +2,7 @@
   <img width="1200" alt="StartPanel Screenshot" src="img/StartPanelScreenshot.jpg">
 </div>
 
-# StartPanel
+# StartPanelApp
 <i>Personal Control Center for your browser and Homey Pro</i>
 
 🌍 Languages: **English** | [Svenska](README_sv.md) 🇸🇪 
