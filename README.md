@@ -450,6 +450,10 @@ Note that browser security restrictions may sometimes block such requests.
 
 ---
 
+<div align="left">
+  <img width="900" alt="StartPanel Screenshot" src="img/StartPanel - Demo Layout.jpg">
+</div>
+
 ## ❓ What is the Homey Layout feature?
 
 The Layout feature lets you place Homey device capabilities freely on top of a background image.  
@@ -490,10 +494,6 @@ This allows you to build an intuitive and visual dashboard where your smart home
 ### To create a Layout dashboard tab:  
 Go to Settings > Dashboards  
 Click "Add Homey Layout"  
-
-<div align="left">
-  <img width="900" alt="StartPanel Screenshot" src="img/StartPanel - Demo Layout.jpg">
-</div>
 
 ---
 
