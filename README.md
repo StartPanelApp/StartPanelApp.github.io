@@ -491,7 +491,9 @@ This allows you to build an intuitive and visual dashboard where your smart home
 Go to Settings > Dashboards  
 Click "Add Homey Layout"  
 
-[image coming soon]
+<div align="left">
+  <img width="800" alt="StartPanel Screenshot" src="img/StartPanel - Layout Example 2.jpg">
+</div>
 
 ---
 
