@@ -492,7 +492,7 @@ Go to Settings > Dashboards
 Click "Add Homey Layout"  
 
 <div align="left">
-  <img width="800" alt="StartPanel Screenshot" src="img/StartPanel - Layout Example 2.jpg">
+  <img width="900" alt="StartPanel Screenshot" src="img/StartPanel - Demo Layout.jpg">
 </div>
 
 ---
