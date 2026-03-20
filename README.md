@@ -325,9 +325,7 @@ If you want to access the dashboard outside your home network, consider using **
 
 ## ❓ How do I sync the dashboard between multiple devices?
 
-The dashboard is stored locally in your browser using **LocalStorage** and is not stored in the cloud.
-
-This is a **privacy-first design choice**, so settings must be copied manually between devices.
+The dashboard is stored locally in your browser using **LocalStorage** and you can either sync / copy it manually by following the steps below:
 
 Steps:
 
@@ -337,23 +335,32 @@ Steps:
 4. On the other device: **Settings → Backup & Restore → Import Data**
 
 Done ✔
+**NOTE!** Keep in mind that the layout is NOT dynamic, and may not fit a different type of device with a smaller / larger screen, or a different orientation.
 
-Make sure to **create backups regularly**.  
+Make sure to **create manual backups regularly**.  
 Store the backup file safely since it is **not encrypted**.
+
+OR
+
+You can use the Cloud Sync. feature, see below.
 
 ---
  
 ## ❓ Can the dashboard sync automatically between devices?
 
-No.
+Soon
 
-Automatic synchronization would require a **cloud service, user accounts, or a backend server**.
-
-StartPanel is intentionally designed to store all data **locally without login or external services**.
 
 ---
 
-## ❓ Does the backup file contain sensitive information? (e.g. Homey tokens)
+## ❓ Cloud Sync
+
+Soon
+
+
+---
+
+## ❓ Does the local backup file contain sensitive information? (e.g. Homey tokens)
 
 Yes, the backup file may contain:
 
@@ -361,35 +368,13 @@ Yes, the backup file may contain:
 - widget configurations
 - authentication tokens (for example Homey PAT)
 
-This is not a security issue by itself, but the file should be treated as a **personal configuration file**.
+This is not a security issue per se, but the file should be treated as a **personal configuration file** as the data is not encrypted when saved locally!
 
 Recommendations:
 
 - store it in a safe location
 - avoid sending it unencrypted
 - do not share it unless you want to share your setup
-
-This is part of the project's **privacy-focused design** — no data is sent to external services.
-
----
- 
-## ❓ Why is nothing stored in the cloud?
-
-Because the project is designed to:
-
-- run completely **offline**
-- avoid **accounts, login systems, and backend servers**
-- give users **full control over their data**
-- avoid dependencies on cloud services that may disappear
-
-It also aligns well with the general **Homey community preference of owning their own hardware setup**.
-
-Because of this design, it is **extra important to create backups regularly**, since browser storage may be cleared due to:
-
-- browser updates
-- crashes
-- app updates
-- system changes
 
 ---
  
