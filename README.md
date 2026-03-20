@@ -43,7 +43,7 @@ StartPanel combines a **start page and dashboard** where you can collect links a
 
 All settings, widgets, favorite links, and layout data are automatically stored in your browser's **LocalStorage**, meaning nothing is stored externally.
 
-For common questions, see the **FAQ section further down** on this page.
+For common questions, see the [**FAQ section further down**](#-faq-frequently-asked-questions) on this page.
 
 ---
 
