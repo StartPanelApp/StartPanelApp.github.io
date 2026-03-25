@@ -348,7 +348,19 @@ You can use the Cloud Sync. feature, see below.
  
 ## ❓ Can the dashboard sync automatically between devices?
 
-Soon
+Yes. (But there are some things you have to keep in mind, see below at Cloud Sync.)
+
+Cloud Sync lets you keep your dashboard in sync across multiple devices by storing your configuration in the cloud.
+
+### ⚙️ Setup in StartPanel
+
+1. Go to **Settings → Cloud Sync**
+2. Select a **Cloud Provider**
+3. Enter your credentials (see setup guides below)
+4. Click **Test Connection**
+5. If it shows ✅ OK:
+   - Enable **"Cloud Sync"**
+   - Choose your preferred sync interval
 
 
 ---
@@ -356,8 +368,133 @@ Soon
 <a id="cloud-sync"></a>
 ## ❓ Cloud Sync
 
-Soon
+### How does it work - and what do you need to consider?
 
+- Your settings are automatically uploaded when:
+  - You make changes (edit widgets, layout, etc.)
+  - A scheduled sync runs
+- The latest version is downloaded when:
+  - You open the app
+  - You manually refresh the page
+  - Background sync triggers
+
+### ⚠️ Important
+
+- Sync is **not real-time**
+- If two devices edit at the same time:
+  → the **last saved version wins**
+- This is intentional to avoid API limits on free plans
+
+---
+
+## 📦 Data Limits (Important!)
+
+Cloud providers have strict size limits:
+
+- **GitHub Gist** → ~1 MB  
+- **jsonbin.io (free)** → ~100 KB  
+
+### 🚫 Avoid using images
+
+Images (especially base64) can quickly exceed these limits.
+
+👉 Recommendation:
+- Avoid storing images in your dashboard
+- Use external image URLs instead
+
+---
+
+## 🔄 API Limits & Pending Requests
+
+Each sync and each edit creates API requests.
+
+- Frequent sync intervals = more requests
+- Free tiers allow many requests, but not unlimited
+
+👉 Recommendation:
+- Use a reasonable sync interval (e.g. 5–15 minutes)
+
+---
+
+## 🧠 Layout Considerations
+
+StartPanel uses a **fixed column layout**, not responsive auto-layout.
+
+This means:
+
+- Layout is based on your column setup
+- Different screen sizes (desktop vs mobile) may look different
+
+👉 Recommendation:
+- Test your layout on multiple devices
+
+---
+
+## Is the json file encrypted on the cloud service
+
+Yes, on the cloud service it is encrypted. But not when you save it locally. Read more about that in a later chapter below.
+
+---
+
+# 🔧 Cloud Provider Setup
+
+---
+
+## ☁️ GitHub Gist Setup
+
+1. Go to https://github.com  
+   → Sign up / Log in
+
+2. Go to https://github.com/settings/tokens  
+   → Generate new token (**classic**)
+
+   - Expiration: optional  
+   - Scope: ✅ `gist`
+
+3. Copy the token  
+   → Paste into StartPanel
+
+---
+
+4. Go to https://gist.github.com  
+   → Create a **Secret Gist**
+
+   - Description: `StartPanelSync`  
+   - Filename: `startpanel_backup.json`  
+   - Content:
+     ```json
+     {}
+     ```
+
+5. Click **Create secret gist**
+
+6. Copy the **Gist ID** from the URL  
+   → Paste into StartPanel
+
+---
+
+## ☁️ jsonbin.io Setup
+
+1. Go to https://jsonbin.io  
+   → Sign up / Log in
+
+2. Go to **API Keys**  
+   → Copy your **X-MASTER-KEY**  
+   → Paste into StartPanel
+
+3. Go to **Bins**  
+   → Create a new Bin
+
+   Content:
+   ```json
+   {
+     "users": []
+   }
+
+4. Save the Bin
+
+5. Copy the BIN ID
+→ Paste into StartPanel
 
 ---
 
