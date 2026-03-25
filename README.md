@@ -412,7 +412,7 @@ Each sync and each edit creates API requests.
 - Free tiers allow many requests, but not unlimited
 
 👉 Recommendation:
-- Use a reasonable sync interval (e.g. 5–15 minutes)
+- Use a reasonable sync interval (e.g. 30 minutes or more)
 
 ---
 
@@ -423,7 +423,7 @@ StartPanel uses a **fixed column layout**, not responsive auto-layout.
 This means:
 
 - Layout is based on your column setup
-- Different screen sizes (desktop vs mobile) may look different
+- Different screen sizes (desktop vs mobile) may look different!
 
 👉 Recommendation:
 - Test your layout on multiple devices
@@ -437,6 +437,8 @@ Yes, on the cloud service it is encrypted. But not when you save it locally. Rea
 ---
 
 # 🔧 Cloud Provider Setup
+
+You have two cloud service provider to choose between. And that is GitHub Gist and jsonbion.io.
 
 ---
 
