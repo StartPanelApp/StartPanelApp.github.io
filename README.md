@@ -5,9 +5,6 @@
 # StartPanelApp
 <i>- A personal Control Center for your browser and Homey Pro</i>
   
-
-🌍 Languages: **English** | [Svenska](README_sv.md) 🇸🇪 
-
 StartPanel is a lightweight and customizable **browser start page and dashboard**, built with **TypeScript** and **Vite**.  
 It allows you to collect links, widgets, and **Homey Pro controls** in one place, running entirely in the browser with no backend or database required.  
 All settings and layout data are stored **locally in your browser**, giving you full control of your configuration.
@@ -26,9 +23,6 @@ All settings and layout data are stored **locally in your browser**, giving you 
 
 Just go to:  
 https://startpanelapp.github.io/  
-
-
-For documentation in **Swedish** 🇸🇪 go here -> [Svenska](README_sv.md)
 
 ---
 
@@ -499,6 +493,83 @@ You have two cloud service provider to choose between. And that is GitHub gist a
 → Paste into StartPanel
 
 ---
+
+## ⚠️ Cloud Sync – Important Notes & Recommendations
+
+### 🔸 Widget Expand / Collapse State
+
+The expanded/collapsed state of widgets is **not synced**.
+
+- This state is stored **locally in each browser**
+- A widget can be expanded on one device and collapsed on another
+
+👉 This is intentional to reduce unnecessary sync traffic and API usage.
+
+---
+
+### ❓ Why can't I sync to a local file on my NAS?
+
+Cloud Sync requires a **public API endpoint** that your browser can access directly.
+
+A local file on your NAS:
+- is not accessible via a standard cloud API
+- cannot handle authentication or remote updates in the same way
+
+👉 Therefore, Cloud Sync only works with supported cloud providers (e.g. GitHub Gist, jsonbin.io)
+
+---
+
+### 🖼 Image Storage Recommendation
+
+To avoid large sync files:
+
+👉 Store images externally instead of inside your dashboard data.
+
+Recommended options:
+- OneDrive
+- Google Drive (public/shared links)
+- Other image hosting services
+
+Then link to the image in StartPanel.
+
+✔ Prevents hitting size limits  
+✔ Keeps your JSON small and fast  
+
+---
+
+## 💾 Local Backup vs ☁️ Cloud Sync
+
+### 💾 Local Backup – Pros
+- No size limitations (images work fine)
+- Full control of your data
+- No dependency on external services
+- Works completely offline
+
+### 💾 Local Backup – Cons
+- Not encrypted
+- Manual handling required (export/import)
+
+---
+
+### ☁️ Cloud Sync – Pros
+- Easy multi-device sync
+- Automatic updates
+- No manual file handling
+
+### ☁️ Cloud Sync – Cons
+- Limited storage (depending on provider)
+- API rate limits may apply
+- Dependent on third-party services
+- Not real-time sync
+- Risk of overwriting changes ("last write wins")
+
+---
+
+## ⭐ Recommendation
+
+👉 **Always keep a local backup!**
+
+Cloud Sync is convenient, but a local backup ensures you never lose your data.
 
 ## ❓ Does the local backup file contain sensitive information? (e.g. Homey tokens)
 
