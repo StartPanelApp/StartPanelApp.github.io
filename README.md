@@ -35,7 +35,7 @@ This is a web-based **start page / dashboard** written in **TypeScript**, develo
 
 StartPanel combines a **start page and dashboard** where you can collect links and different widgets in one place.
 
-All settings, widgets, favorite links, and layout data are automatically stored in your browser's **LocalStorage**, meaning nothing is stored externally.
+All settings, widgets, favorite links, and layout data are automatically stored in your browser's **LocalStorage**, meaning nothing is stored externally (unless you choose cloud sync).
 
 For common questions, see the [**FAQ section further down**](#-faq-frequently-asked-questions) on this page.
 
