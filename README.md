@@ -438,7 +438,7 @@ Yes, on the cloud service it is encrypted. But not when you save it locally. Rea
 
 # 🔧 Cloud Provider Setup
 
-You have two cloud service provider to choose between. And that is GitHub Gist and jsonbion.io.
+You have two cloud service provider to choose between. And that is GitHub gist and jsonbin.io.
 
 ---
 
