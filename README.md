@@ -609,9 +609,28 @@ Full functionality requires an **API token / PAT**, which is available on **Home
 
 ## ❓ Can I view live video from IP cameras?
 
-Yes, but several conditions must be met.
+Yes, there are some ways to try, but there are sveral conditions that must be met.  
 
-Example setup:
+**Option 1 (Recommended): MJPEG stream (simplest)**
+
+If your camera supports MJPEG, this is the easiest method.
+
+Use the "Video (MJPEG)" widget and enter the camera stream URL.
+
+Example (Foscam):
+
+http://192.168.1.34:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=admin&pwd=12345
+
+Requirements and limitations:
+
+- StartPanel must run locally (for example on a NAS or local web server)
+- The stream must be accessed over HTTP (not HTTPS) to avoid browser security issues
+- The camera must support MJPEG streaming
+- ⚠️ MJPEG streams do not include audio
+
+This method requires minimal setup and works directly in the browser.
+
+**Option 2: RTSP via go2rtc (more advanced)**
 
 1. The camera must provide an **RTSP stream**
 2. StartPanel must run locally on a **web server** (for example on a NAS)
