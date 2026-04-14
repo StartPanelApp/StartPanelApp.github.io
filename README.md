@@ -644,7 +644,7 @@ go2rtc acts as a **bridge**, converting the RTSP stream into a format that brows
 
 It works well but requires some setup.
 
-🧠 Simple explanation:
+**🧠 Simple explanation:**  
 MJPEG = easiest, but basic (no sound, higher bandwidth)  
 RTSP via go2rtc = more setup, but better quality and supports audio  
 
