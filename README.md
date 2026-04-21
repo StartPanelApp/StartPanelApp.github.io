@@ -3,21 +3,25 @@
 </div>
 
 # StartPanelApp
-<i>- A personal Control Center for your browser and Homey Pro</i>
-  
-StartPanel is a lightweight and customizable **browser start page and dashboard**, built with **TypeScript** and **Vite**.  
-It allows you to collect links, widgets, and **Homey Pro controls** in one place, running entirely in the browser with no backend or database required.  
+<i>- A personal start page for your everyday tools, with optional Homey Pro integration</i>  
+
+StartPanel is a **customizable browser start page and dashboard**, built with TypeScript and Vite.
+It lets you collect links, widgets, and **Homey Pro controls** in one place – running entirely in the browser with no backend or database required.
 All settings and layout data are stored **locally in your browser**, giving you full control of your configuration.
 
 ## Key features
 
 - Customizable **start page with links and widgets**
-- **Homey dashboard** with live capability updates via Homey Cloud
+- Multiple tabs (for work, home, or anything you want)
+- Runs directly from **GitHub Pages** or can be hosted locally
+
+### Homey integration (optional)
+- **Homey dashboard** with live capability updates via Homey Cloud (or local polling)
 - Flexible layouts including **column layout or free placement**
 - Support for **background images / floorplan dashboards**
-- Multiple tabs (for example per room, floor, or function)
+- Use multiple tabs (for example per room, floor, or function)
+- Built in easy to use Homey Pro widgets
 - Installable as a **Progressive Web App (PWA)** for tablet or kiosk setups
-- Runs directly from **GitHub Pages** or can be hosted locally
 
 ## Run it directly in your browser
 
