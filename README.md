@@ -28,26 +28,15 @@ All settings and layout data are stored **locally in your browser**, giving you 
 Just go to:  
 https://startpanelapp.github.io/  
 
----
-
-
-# StartPanelApp – Web-based Start Page & Dashboard with Homey Integration
-
-This is a web-based **start page / dashboard** written in **TypeScript**, developed with significant help from Google AI Studio.
-
 > **Note:** This is *not* an official Homey app. It is a personal project that I originally built for my own use.
-
-StartPanel combines a **start page and dashboard** where you can collect links and different widgets in one place.
-
-All settings, widgets, favorite links, and layout data are automatically stored in your browser's **LocalStorage**, meaning nothing is stored externally (unless you choose cloud sync).
 
 For common questions, see the [**FAQ section further down**](#-faq-frequently-asked-questions) on this page.
 
 ---
 
-## Homey Pro 2023 Integration
+## Homey Pro Integration
 
-To use StartPanel with **Homey Pro 2023**, you can connect through the **Homey Cloud**, run the app locally on a NAS, or simply use **webhooks**.  
+To use StartPanel with **Homey Pro**, you can connect through the **Homey Cloud**, run the app locally on a NAS, or simply use **webhooks**.  
 Depending on how you run the app, you can view device status and control devices directly from the page.
 
 ---
