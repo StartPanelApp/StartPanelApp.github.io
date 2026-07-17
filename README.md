@@ -131,13 +131,13 @@ The user can now not leave the app without entering the device PIN.
 
 ## Advanced Usage
 
-If you want to avoid cloud services or GitHub dependencies, you can run StartPanel locally on a NAS such as:
+If you want to avoid GitHub dependencies and/or cloud services , you can run StartPanel locally on a NAS such as:
 
 - Asustor
 - Synology
 - QNAP
 
-When running locally, the system uses **polling instead of live updates**, meaning device updates occur with a small delay based on the selected polling interval.
+When running locally, the system uses **polling instead of live updates** by default, meaning device updates occur with a small delay based on the selected polling interval. BUT you can also chose to connect to Homey Cloud when running locally - then you will have live updates.
 
 ⭐ Do I need to be on the same network as Homey?  
 
